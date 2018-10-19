@@ -22,7 +22,24 @@ Open your app gradle file and add to your dependencies
 ## Dagger Annotations
 * @Module - Defines a class that provides dependency and the annotation is placed on top of the class.
 * @Provides - Tells dagger that the dependency is provided by given function.
+```java
+@Module
+public class UserModule {
+
+    @Provides
+    User providesUser() {
+        return new User();
+    }
+}
+```
 * @Component - An interface contain methods that specify to Dagger where to inject the dependencies. It is added on top of the class and includes modules providing the dependencies.
+```java
+@Component(modules = UserModule.class)
+public interface UserComponent {
+   void inject(MainActivity mainActivity);
+
+}
+```
 * @Inject - Used to request for dependency in classes which requires to use them.
 
 ## Creating DaggerComponent
