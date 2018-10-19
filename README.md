@@ -1,7 +1,7 @@
 # AndroidDaggerSample
 Simple example showing how to implement dagger for dependencies injection
 
-##Getting Started
+## Getting Started
 The code has three packages
 
 * di (for dependecy injection modules and Components)
@@ -18,17 +18,17 @@ Open your app gradle file and add to your dependencies
 
 
 
-##Dagger Annotations
+## Dagger Annotations
 * @Module - Defines a class that provides dependency and the annotation is placed on top of the class.
 * @Provides - Tells dagger that the dependency is provided by given function.
 * @Component - An interface contain methods that specify to Dagger where to inject the dependencies. It is added on top of the class and includes modules providing the dependencies.
 * @Inject - Used to request for dependency in classes which requires to use them.
 
-##Creating DaggerComponent
+## Creating DaggerComponent
 Once the module and Component has been created, build the app and dagger will automatically generate DaggerComponent that you will use to initialize you component.
 
 
-##Injecting Your Dependencies into the class
+## Injecting Your Dependencies into the class
 For Easier implementation, create a class extending Application class and define your component which you initialize on its onCreate
 Create a public method to provide the component
 You can also create a public static method to give you the instance of the class such that you will not have to create its object from your activity but instead call it directly
