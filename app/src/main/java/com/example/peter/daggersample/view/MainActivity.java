@@ -7,8 +7,6 @@ import android.widget.Toast;
 
 import com.example.peter.daggersample.MyApp;
 import com.example.peter.daggersample.R;
-import com.example.peter.daggersample.di.components.DaggerUserComponent;
-import com.example.peter.daggersample.di.components.UserComponent;
 import com.example.peter.daggersample.model.User;
 
 import javax.inject.Inject;
@@ -39,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Method that retrieves user input from the edittexts and bind them to the user opbject
+     * Method that retrieves user input from the edittexts and bind them to the user object
      */
     public void getUserInput() {
         String username = edUsername.getText().toString().trim();

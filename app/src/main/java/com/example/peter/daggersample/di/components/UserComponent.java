@@ -10,4 +10,5 @@ import dagger.Component;
 @Component(modules = UserModule.class)
 public interface UserComponent {
    void inject(MainActivity mainActivity);
+
 }
