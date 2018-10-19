@@ -28,6 +28,12 @@ Open your app gradle file and add to your dependencies
 ## Creating DaggerComponent
 Once the module and Component has been created, build the app and dagger will automatically generate DaggerComponent that you will use to initialize you component.
 
+```java
+ UserComponent userComponent = DaggerUserComponent.builder()
+                .userModule(userModule)
+                .build();
+```
+
 
 ## Injecting Your Dependencies into the class
 For Easier implementation, create a class extending Application class and define your component which you initialize on its onCreate
