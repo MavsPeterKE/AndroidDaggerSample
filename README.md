@@ -13,9 +13,10 @@ MyApp Class (Creates the dagger component and exposes it through public method)
 
 ### Add Dagger 2 to your build.gradle
 Open your app gradle file and add to your dependencies 
-   > implementation 'com.google.dagger:dagger:2.15'
    
-   > annotationProcessor 'com.google.dagger:dagger-compiler:2.15'
+    implementation 'com.google.dagger:dagger:2.15'
+  
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.15'
 
 
 
