@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="userviewmodel"
+            type ="com.example.peter.simpledatabinding.viewmodel.UserViewModel"/>
+
+    </data>
+<LinearLayout
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".view.MainActivity">
-
 
     <EditText
         android:id="@+id/edusername"
@@ -14,6 +20,7 @@
         android:ems="10"
         android:layout_marginTop="16dp"
         android:inputType="textPersonName"
+        android:text="@={userviewmodel.username}"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:hint="@string/hint_username" />
@@ -24,10 +31,10 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
+        android:text="@={userviewmodel.password}"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
        android:hint="@string/hint_password" />
-
     <Button
         android:id="@+id/btlogin"
         android:layout_width="match_parent"
@@ -35,5 +42,37 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
+        android:onClick="@{()->userviewmodel.computeTotals()}"
         android:text="Button" />
+
+    <Button
+        android:id="@+id/btnext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:text="Next" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total amount: @{userviewmodel.username}"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{userviewmodel.display}"
+            android:onClick="@{}"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
+    </LinearLayout>
+
 </LinearLayout>
+</layout>

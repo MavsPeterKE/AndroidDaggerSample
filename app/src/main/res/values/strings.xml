@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">Dagger Test</string>
+    <string name="app_name">Data Binding</string>
     <string name="hint_username">Username</string>
     <string name="hint_password">Password</string>
     <string name="btn_login">Login</string>
+    <string name="title_activity_main2">Main2Activity</string>
 </resources>

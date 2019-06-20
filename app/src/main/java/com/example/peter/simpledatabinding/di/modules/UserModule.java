@@ -1,6 +1,6 @@
-package com.example.peter.daggersample.di.modules;
+package com.example.peter.simpledatabinding.di.modules;
 
-import com.example.peter.daggersample.model.User;
+import com.example.peter.simpledatabinding.model.User;
 
 import dagger.Module;
 import dagger.Provides;

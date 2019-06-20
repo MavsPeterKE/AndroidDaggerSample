@@ -1,52 +1,56 @@
-package com.example.peter.daggersample.view;
+package com.example.peter.simpledatabinding.view;
 
+import android.arch.lifecycle.ViewModelProviders;
+import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.peter.daggersample.MyApp;
-import com.example.peter.daggersample.R;
-import com.example.peter.daggersample.model.User;
+import com.example.peter.simpledatabinding.MyApp;
+import com.example.peter.simpledatabinding.R;
+import com.example.peter.simpledatabinding.databinding.ActivityMainBinding;
+import com.example.peter.simpledatabinding.model.User;
+import com.example.peter.simpledatabinding.viewmodel.UserViewModel;
 
 import javax.inject.Inject;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-
 public class MainActivity extends AppCompatActivity {
-    @BindView(R.id.edusername)
-    EditText edUsername;
-    @BindView(R.id.edpassword)
-    EditText edPassword;
     @Inject
     User mUser;
+    UserViewModel mUserViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+        ActivityMainBinding activityMainBinding = DataBindingUtil.setContentView(this, R.layout
+                .activity_main);
+        mUserViewModel = new UserViewModel();
+        activityMainBinding.setUserviewmodel(mUserViewModel);
         MyApp.app().userComponent().inject(this);
     }
 
-    @OnClick(R.id.btlogin)
+    /*@OnClick(R.id.btlogin)
     void login() {
         getUserInput();
-    }
+    }*/
 
     /**
      * Method that retrieves user input from the edittexts and bind them to the user object
      */
-    public void getUserInput() {
+    /*public void getUserInput() {
         String username = edUsername.getText().toString().trim();
         String password = edPassword.getText().toString().trim();
 
         mUser.setUsername(username);
         mUser.setPassword(password);
+        putString(USER_NAME, username);
         showUserDetail(mUser);
-    }
+    }*/
+
+    /*@OnClick(R.id.btnext)
+    void openNewActivity() {
+        startActivity(new Intent(this, Main2Activity.class));
+    }*/
 
     /**
      * method that displays user details

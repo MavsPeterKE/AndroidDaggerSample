@@ -1,4 +1,4 @@
-package com.example.peter.daggersample.model;
+package com.example.peter.simpledatabinding.model;
 
 public class User {
     private String username;
